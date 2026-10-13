@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Etsy Digital Downloads Profit Calculator (2026) – Fees &amp; Profit per Sale</title>
+<meta name="description" content="Free Etsy digital downloads profit calculator. Enter your price and see listing, transaction, payment processing and offsite ads fees, plus profit per sale, margin and monthly profit.">
+<link rel="canonical" href="https://bgzgts3-hue.github.io/etsy-uk-fees-calculator/digital-downloads-calculator.html">
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;background:#f6f7f9;color:#1f2933;line-height:1.55}
+.wrap{max-width:860px;margin:0 auto;padding:16px}
+header{background:#fff;border-bottom:1px solid #e4e7eb}
+header .wrap{padding:12px 16px}
+nav a{margin-right:14px;color:#1d4ed8;text-decoration:none;font-size:15px}
+nav a:hover{text-decoration:underline}
+h1{font-size:28px;margin:18px 0 6px}
+h2{font-size:21px;margin:28px 0 8px}
+.lead{color:#52606d;margin:0 0 16px}
+.card{background:#fff;border:1px solid #e4e7eb;border-radius:12px;padding:18px;margin-bottom:16px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+label{display:block;font-size:14px;font-weight:600;margin-bottom:4px}
+input,select{width:100%;padding:10px;font-size:16px;border:1px solid #cbd2d9;border-radius:8px;background:#fff}
+small{display:block;color:#7b8794;margin-top:3px;font-size:12.5px}
+.res{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.box{background:#f0f4ff;border-radius:10px;padding:14px}
+.box.good{background:#e6f6ec}
+.box.bad{background:#fdecea}
+.box span{display:block;font-size:13px;color:#52606d}
+.box b{font-size:24px}
+table{width:100%;border-collapse:collapse;margin-top:10px;font-size:15px}
+td{padding:8px 4px;border-bottom:1px solid #eef0f2}
+td:last-child{text-align:right;font-variant-numeric:tabular-nums}
+.note{font-size:13px;color:#7b8794}
+ul.links{padding-left:18px}
+footer{color:#7b8794;font-size:13px;padding:20px 0 40px}
+@media(max-width:600px){.grid,.res{grid-template-columns:1fr}h1{font-size:23px}}
+</style>
+</head>
+<body>
+<header><div class="wrap"><nav>
+<a href="index.html">UK Fees Calculator</a>
+<a href="offsite-ads-calculator.html">Offsite Ads Calculator</a>
+<a href="digital-downloads-calculator.html"><b>Digital Downloads</b></a>
+</nav></div></header>
+
+<div class="wrap">
+<h1>Etsy Digital Downloads Profit Calculator</h1>
+<p class="lead">Digital products have no shipping, but Etsy fees still add up. Enter your numbers to see what you actually keep from each sale and each month.</p>
+
+<div class="card">
+<div class="grid">
+<div><label for="price">Selling price (£)</label><input id="price" type="number" step="0.01" value="5.00"></div>
+<div><label for="qty">Sales per month</label><input id="qty" type="number" step="1" value="100"></div>
+<div><label for="cost">Cost per sale (£)</label><input id="cost" type="number" step="0.01" value="0"><small>Usually 0 for digital files. Add any per-sale cost, e.g. a licensed font or asset.</small></div>
+<div><label for="fixed">Monthly fixed costs (£)</label><input id="fixed" type="number" step="0.01" value="0"><small>Software, Canva Pro, Etsy ads spend, etc.</small></div>
+<div><label for="share">Sales from Offsite Ads (%)</label><input id="share" type="number" step="1" value="0"><small>Share of your sales that came through Offsite Ads.</small></div>
+<div><label for="adrate">Offsite Ads fee rate</label>
+<select id="adrate"><option value="15">15% (under $10k/year)</option><option value="12">12% (over $10k/year)</option></select></div>
+</div>
+
+<details style="margin-top:14px"><summary style="cursor:pointer;font-weight:600">Fee settings (edit if Etsy changes them)</summary>
+<div class="grid" style="margin-top:12px">
+<div><label for="tx">Transaction fee (%)</label><input id="tx" type="number" step="0.01" value="6.5"></div>
+<div><label for="list">Listing fee per sale (£)</label><input id="list" type="number" step="0.01" value="0.16"><small>Digital listings renew automatically after each sale.</small></div>
+<div><label for="pp">Payment processing (%)</label><input id="pp" type="number" step="0.01" value="4"></div>
+<div><label for="ppf">Payment processing fixed (£)</label><input id="ppf" type="number" step="0.01" value="0.20"></div>
+<div><label for="reg">Regulatory operating fee (%)</label><input id="reg" type="number" step="0.01" value="0.32"></div>
+</div>
+<p class="note">Defaults reflect typical UK seller fees. Always check Etsy's current fee page, as rates change and differ by country.</p>
+</details>
+</div>
+
+<div class="card">
+<div class="res">
+<div class="box good" id="profitBox"><span>Profit per sale</span><b id="profit">–</b></div>
+<div class="box"><span>Profit margin</span><b id="margin">–</b></div>
+<div class="box"><span>Total fees per sale</span><b id="fees">–</b></div>
+<div class="box good" id="monthBox"><span>Monthly profit (after fixed costs)</span><b id="month">–</b></div>
+</div>
+<table>
+<tr><td>Transaction fee</td><td id="rTx">–</td></tr>
+<tr><td>Payment processing</td><td id="rPp">–</td></tr>
+<tr><td>Regulatory operating fee</td><td id="rReg">–</td></tr>
+<tr><td>Listing fee</td><td id="rList">–</td></tr>
+<tr><td>Offsite Ads fee (average per sale)</td><td id="rAd">–</td></tr>
+<tr><td>Your cost per sale</td><td id="rCost">–</td></tr>
+<tr><td><b>Break-even price</b></td><td id="rBe">–</td></tr>
+</table>
+<p class="note">Fees on Etsy's own fees (VAT) and VAT charged to buyers are not included. Treat results as an estimate.</p>
+</div>
+
+<h2>How Etsy fees work on digital downloads</h2>
+<p>Every sale of a digital file carries a listing fee, a transaction fee on the item price, and a payment processing fee. If a buyer arrived through an Offsite Ad, Etsy also takes an Offsite Ads fee on the order total. Because digital items usually have low prices, the fixed parts of the fees (listing fee and the fixed processing amount) take a bigger share than on physical products.</p>
+
+<h2>Frequently asked questions</h2>
+<p><b>Do I pay shipping costs on digital downloads?</b><br>No. There is nothing to ship, so your costs are Etsy fees plus anything you spend creating or promoting the file.</p>
+<p><b>Why does a cheap printable leave so little profit?</b><br>The fixed fees apply to each sale regardless of price, so a £2 item loses a much higher percentage than a £20 item. Bundles and higher prices improve your margin.</p>
+<p><b>What is a good profit margin for digital products?</b><br>Many sellers aim for 70% or more, since there are no materials or postage. Use the break-even price above to check your floor.</p>
+
+<h2>More Etsy calculators</h2>
+<ul class="links">
+<li><a href="index.html">Etsy UK Fees Calculator</a></li>
+<li><a href="offsite-ads-calculator.html">Etsy Offsite Ads Fee Calculator</a></li>
+</ul>
+
+<footer>Not affiliated with Etsy. Figures are estimates for planning purposes only.</footer>
+</div>
+
+<script>
+function v(id){var n=parseFloat(document.getElementById(id).value);return isNaN(n)?0:n}
+function m(n){return (n<0?"-":"")+"£"+Math.abs(n).toFixed(2)}
+function calc(){
+ var price=v("price"),qty=v("qty"),cost=v("cost"),fixed=v("fixed"),share=v("share")/100,adrate=v("adrate")/100;
+ var tx=price*v("tx")/100, pp=price*v("pp")/100+v("ppf"), reg=price*v("reg")/100, list=v("list"), ad=price*adrate*share;
+ var fees=tx+pp+reg+list+ad, profit=price-fees-cost;
+ var margin=price>0?profit/price*100:0, month=profit*qty-fixed;
+ document.getElementById("profit").textContent=m(profit);
+ document.getElementById("margin").textContent=margin.toFixed(1)+"%";
+ document.getElementById("fees").textContent=m(fees);
+ document.getElementById("month").textContent=m(month);
+ document.getElementById("rTx").textContent=m(tx);
+ document.getElementById("rPp").textContent=m(pp);
+ document.getElementById("rReg").textContent=m(reg);
+ document.getElementById("rList").textContent=m(list);
+ document.getElementById("rAd").textContent=m(ad);
+ document.getElementById("rCost").textContent=m(cost);
+ var pctVar=(v("tx")+v("pp")+v("reg"))/100+adrate*share;
+ var be=pctVar<1?(v("ppf")+list+cost)/(1-pctVar):0;
+ document.getElementById("rBe").textContent=m(be);
+ document.getElementById("profitBox").className="box "+(profit>=0?"good":"bad");
+ document.getElementById("monthBox").className="box "+(month>=0?"good":"bad");
+}
+var els=document.querySelectorAll("input,select");
+for(var i=0;i<els.length;i++){els[i].addEventListener("input",calc);els[i].addEventListener("change",calc)}
+calc();
+</script>
+</body>
+</html>
