@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Etsy Offsite Ads Fee Calculator (UK) – See Your Profit After Ads</title>
+<meta name="description" content="Free Etsy Offsite Ads fee calculator. See how much the 12% or 15% ads fee costs you, your profit with and without ads, and the price rise needed to cover it.">
+<style>
+:root{--bg:#f7f5f2;--card:#fff;--text:#222;--muted:#666;--accent:#f1641e;--line:#e5e0d9}
+@media(prefers-color-scheme:dark){:root{--bg:#161616;--card:#222;--text:#eee;--muted:#aaa;--line:#383838}}
+*{box-sizing:border-box}
+body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+.wrap{max-width:760px;margin:0 auto;padding:20px 16px 60px}
+h1{font-size:1.7rem;line-height:1.25;margin:10px 0}
+h2{font-size:1.25rem;margin-top:32px}
+.sub{color:var(--muted);margin-top:0}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px;margin:16px 0}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:520px){.grid{grid-template-columns:1fr}}
+label{display:block;font-size:.85rem;color:var(--muted);margin-bottom:4px}
+input[type=number]{width:100%;padding:10px;font-size:1rem;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--text)}
+.chk{display:flex;gap:8px;align-items:center;margin:10px 0;font-size:.95rem}
+.chk label{margin:0;color:var(--text)}
+.box{border:1px solid var(--line);border-radius:10px;padding:12px;text-align:center}
+.box b{display:block;font-size:1.4rem}
+.box.main{background:var(--accent);color:#fff;border:0}
+table{width:100%;border-collapse:collapse;font-size:.95rem}
+td,th{padding:8px 4px;border-bottom:1px solid var(--line);text-align:left}
+td:not(:first-child),th:not(:first-child){text-align:right}
+.note{font-size:.8rem;color:var(--muted)}
+.nav a{color:var(--accent)}
+details{border-bottom:1px solid var(--line);padding:10px 0}
+summary{cursor:pointer;font-weight:600}
+.ad{min-height:90px;margin:20px 0;text-align:center;color:var(--muted);font-size:.8rem}
+</style>
+</head>
+<body>
+<div class="wrap">
+<p class="nav"><a href="index.html">&larr; Etsy Fees Calculator UK</a></p>
+<h1>Etsy Offsite Ads Fee Calculator (UK)</h1>
+<p class="sub">See what an Offsite Ads sale really leaves you with, and how much to raise your price to stay profitable.</p>
+
+<div class="card">
+<div class="grid">
+<div><label>Item price (£)</label><input type="number" id="price" value="25" min="0" step="0.01"></div>
+<div><label>Shipping charged to buyer (£)</label><input type="number" id="ship" value="3.50" min="0" step="0.01"></div>
+<div><label>Your item cost (£)</label><input type="number" id="cost" value="8" min="0" step="0.01"></div>
+<div><label>Your postage cost (£)</label><input type="number" id="shipcost" value="3" min="0" step="0.01"></div>
+</div>
+<div class="chk"><input type="checkbox" id="small" checked><label for="small">Shop earned under $10,000 in last 365 days (15% fee, else 12%)</label></div>
+<div class="chk"><input type="checkbox" id="vat" checked><label for="vat">I'm NOT VAT registered (Etsy adds 20% VAT on its fees)</label></div>
+</div>
+
+<div class="card">
+<div class="grid">
+<div class="box main"><span>Ads fee on this sale</span><b id="adfee">£0</b></div>
+<div class="box"><span>Price rise to cover it</span><b id="rise">£0</b></div>
+</div>
+<table style="margin-top:14px">
+<tr><th></th><th>Without ads</th><th>With ads</th></tr>
+<tr><td>Etsy fees</td><td id="a1"></td><td id="b1"></td></tr>
+<tr><td>Profit</td><td id="a2"></td><td id="b2"></td></tr>
+<tr><td>Margin</td><td id="a3"></td><td id="b3"></td></tr>
+</table>
+<p class="note">Estimate only. Offsite Ads fee is capped per item (about $100); the cap is applied here as roughly £75. Check Etsy's official fees page for current rates.</p>
+</div>
+
+<div class="ad">Advertisement</div>
+
+<h2>How the Etsy Offsite Ads fee works</h2>
+<p>Offsite Ads are Etsy's adverts on Google, Facebook, Instagram and other sites. You only pay when a buyer clicks one of these ads and buys within 30 days. The fee is 15% of the order total (item + shipping) for shops under $10,000 in annual sales, or 12% for larger shops, which cannot opt out.</p>
+<p>This fee comes <b>on top of</b> the normal listing, transaction (6.5%) and payment processing fees, which is why a sale with ads can leave you with almost no profit on low-margin items.</p>
+
+<h2>FAQ</h2>
+<details><summary>Can I turn off Offsite Ads?</summary><p>Yes, if your shop earned under $10,000 in the last 365 days. Once you pass that, they are compulsory at the lower 12% rate.</p></details>
+<details><summary>Is the Offsite Ads fee charged on shipping?</summary><p>Yes, it is calculated on the full order total including shipping.</p></details>
+<details><summary>Is there a maximum Offsite Ads fee?</summary><p>Yes, Etsy caps the fee per item at around $100.</p></details>
+<p class="nav"><a href="index.html">Try the full Etsy Fees Calculator for UK sellers &rarr;</a></p>
+<p class="nav"><a href="digital-downloads-calculator.html">Selling digital downloads? Try the Digital Downloads Profit Calculator &rarr;</a></p>
+</div>
+
+<script>
+const $=id=>document.getElementById(id);
+const g=id=>parseFloat($(id).value)||0;
+const f=n=>"£"+n.toFixed(2);
+const CAP=75;
+function run(price,ship,cost,sc,withAds){
+  const total=price+ship;
+  const base=0.15+total*0.065+total*0.04+0.20+total*0.0048;
+  const adr=$('small').checked?0.15:0.12;
+  const ad=withAds?Math.min(total*adr,CAP):0;
+  const sub=base+ad;
+  const fees=sub*($('vat').checked?1.2:1);
+  const profit=total-fees-cost-sc;
+  return{fees,profit,margin:total>0?profit/total*100:0,ad:ad*($('vat').checked?1.2:1)};
+}
+function calc(){
+  const p=g('price'),s=g('ship'),c=g('cost'),sc=g('shipcost');
+  const a=run(p,s,c,sc,false),b=run(p,s,c,sc,true);
+  $('a1').textContent=f(a.fees);$('b1').textContent=f(b.fees);
+  $('a2').textContent=f(a.profit);$('b2').textContent=f(b.profit);
+  $('a3').textContent=a.margin.toFixed(1)+"%";$('b3').textContent=b.margin.toFixed(1)+"%";
+  $('adfee').textContent=f(b.ad);
+  // price rise so profit with ads equals profit without ads at current price
+  const v=$('vat').checked?1.2:1;
+  const adr=$('small').checked?0.15:0.12;
+  const rate=(0.065+0.04+0.0048+adr)*v;
+  const lost=a.profit-b.profit;
+  const denom=1-rate;
+  $('rise').textContent=denom>0?f(Math.max(0,lost/denom)):"N/A";
+}
+document.querySelectorAll('input').forEach(i=>i.addEventListener('input',calc));
+calc();
+</script>
+</body>
+</html>

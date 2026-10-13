@@ -62,10 +62,11 @@ footer{color:#7b8794;font-size:13px;padding:20px 0 40px}
 <details style="margin-top:14px"><summary style="cursor:pointer;font-weight:600">Fee settings (edit if Etsy changes them)</summary>
 <div class="grid" style="margin-top:12px">
 <div><label for="tx">Transaction fee (%)</label><input id="tx" type="number" step="0.01" value="6.5"></div>
-<div><label for="list">Listing fee per sale (£)</label><input id="list" type="number" step="0.01" value="0.16"><small>Digital listings renew automatically after each sale.</small></div>
+<div><label for="list">Listing fee per sale (£)</label><input id="list" type="number" step="0.01" value="0.15"><small>Digital listings renew automatically after each sale.</small></div>
 <div><label for="pp">Payment processing (%)</label><input id="pp" type="number" step="0.01" value="4"></div>
 <div><label for="ppf">Payment processing fixed (£)</label><input id="ppf" type="number" step="0.01" value="0.20"></div>
-<div><label for="reg">Regulatory operating fee (%)</label><input id="reg" type="number" step="0.01" value="0.32"></div>
+<div><label for="reg">Regulatory operating fee (%)</label><input id="reg" type="number" step="0.01" value="0.48"></div>
+<div style="grid-column:1/-1"><label style="font-weight:400"><input type="checkbox" id="vat" checked style="width:auto"> I'm NOT VAT registered (Etsy adds 20% VAT on its fees)</label></div>
 </div>
 <p class="note">Defaults reflect typical UK seller fees. Always check Etsy's current fee page, as rates change and differ by country.</p>
 </details>
@@ -87,7 +88,7 @@ footer{color:#7b8794;font-size:13px;padding:20px 0 40px}
 <tr><td>Your cost per sale</td><td id="rCost">–</td></tr>
 <tr><td><b>Break-even price</b></td><td id="rBe">–</td></tr>
 </table>
-<p class="note">Fees on Etsy's own fees (VAT) and VAT charged to buyers are not included. Treat results as an estimate.</p>
+<p class="note">VAT charged to buyers on digital items is not included. Treat results as an estimate.</p>
 </div>
 
 <h2>How Etsy fees work on digital downloads</h2>
@@ -113,6 +114,8 @@ function m(n){return (n<0?"-":"")+"£"+Math.abs(n).toFixed(2)}
 function calc(){
  var price=v("price"),qty=v("qty"),cost=v("cost"),fixed=v("fixed"),share=v("share")/100,adrate=v("adrate")/100;
  var tx=price*v("tx")/100, pp=price*v("pp")/100+v("ppf"), reg=price*v("reg")/100, list=v("list"), ad=price*adrate*share;
+ var vm=document.getElementById("vat").checked?1.2:1;
+ tx*=vm;pp*=vm;reg*=vm;list*=vm;ad*=vm;
  var fees=tx+pp+reg+list+ad, profit=price-fees-cost;
  var margin=price>0?profit/price*100:0, month=profit*qty-fixed;
  document.getElementById("profit").textContent=m(profit);
@@ -125,8 +128,8 @@ function calc(){
  document.getElementById("rList").textContent=m(list);
  document.getElementById("rAd").textContent=m(ad);
  document.getElementById("rCost").textContent=m(cost);
- var pctVar=(v("tx")+v("pp")+v("reg"))/100+adrate*share;
- var be=pctVar<1?(v("ppf")+list+cost)/(1-pctVar):0;
+ var pctVar=((v("tx")+v("pp")+v("reg"))/100+adrate*share)*vm;
+ var be=pctVar<1?((v("ppf")+v("list"))*vm+cost)/(1-pctVar):0;
  document.getElementById("rBe").textContent=m(be);
  document.getElementById("profitBox").className="box "+(profit>=0?"good":"bad");
  document.getElementById("monthBox").className="box "+(month>=0?"good":"bad");
