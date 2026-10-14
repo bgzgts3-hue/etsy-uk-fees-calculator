@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About – Etsy Calculators</title>
+<meta name="description" content="Free Etsy fee and profit calculators for sellers in the UK, US, Canada and Australia.">
+<link rel="canonical" href="https://bgzgts3-hue.github.io/etsy-uk-fees-calculator/about.html">
+<style>
+:root{--bg:#f7f5f2;--card:#fff;--text:#222;--muted:#666;--accent:#f1641e;--line:#e5e0d9}
+@media(prefers-color-scheme:dark){:root{--bg:#161616;--card:#222;--text:#eee;--muted:#aaa;--line:#383838}}
+*{box-sizing:border-box}
+body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+.wrap{max-width:760px;margin:0 auto;padding:20px 16px 60px}
+h1{font-size:1.7rem;line-height:1.25;margin:10px 0}
+h2{font-size:1.25rem;margin-top:32px}
+.sub{color:var(--muted);margin-top:0}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px;margin:16px 0}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:520px){.grid{grid-template-columns:1fr}}
+label{display:block;font-size:.85rem;color:var(--muted);margin-bottom:4px}
+input[type=number]{width:100%;padding:10px;font-size:1rem;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--text)}
+.chk{display:flex;gap:8px;align-items:center;margin:10px 0;font-size:.95rem}
+.chk label{margin:0;color:var(--text)}
+.res{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:6px}
+.box{border:1px solid var(--line);border-radius:10px;padding:12px;text-align:center}
+.box b{display:block;font-size:1.4rem}
+.box.main{background:var(--accent);color:#fff;border:0}
+table{width:100%;border-collapse:collapse;font-size:.95rem}
+td,th{padding:8px 4px;border-bottom:1px solid var(--line);text-align:left}
+td:last-child,th:last-child{text-align:right}
+.note{font-size:.8rem;color:var(--muted)}
+details{border-bottom:1px solid var(--line);padding:10px 0}
+summary{cursor:pointer;font-weight:600}
+.ad{min-height:90px;margin:20px 0;text-align:center;color:var(--muted);font-size:.8rem}
+
+.sitenav{position:sticky;top:0;z-index:50;background:var(--card,#fff);border-bottom:1px solid var(--line,#e4e7eb);font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;line-height:1.4}
+.sitenav .sn-in{max-width:860px;margin:0 auto;padding:0 16px;min-height:56px;display:flex;align-items:center;justify-content:space-between}
+.sitenav .sn-brand{font-weight:700;font-size:1rem;color:var(--text,#222);text-decoration:none}
+.sitenav .sn-brand span{color:var(--accent,#f1641e)}
+.sitenav ul{list-style:none;margin:0;padding:0;display:flex;gap:4px}
+.sitenav ul a{display:block;padding:8px 14px;border-radius:999px;color:var(--text,#222);text-decoration:none;font-size:.92rem;font-weight:500;margin:0}
+.sitenav ul a:hover{background:rgba(127,127,127,.14)}
+.sitenav ul a.active{background:var(--accent,#f1641e);color:#fff}
+.sitenav .sn-btn{display:none;align-items:center;justify-content:center;width:44px;height:44px;background:none;border:1px solid var(--line,#e4e7eb);border-radius:10px;color:var(--text,#222);cursor:pointer}
+.sitenav .sn-btn svg{width:22px;height:22px}
+@media(max-width:900px){
+.sitenav .sn-btn{display:flex}
+.sitenav ul{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;gap:2px;padding:8px 12px 12px;background:var(--card,#fff);border-bottom:1px solid var(--line,#e4e7eb);box-shadow:0 8px 16px rgba(0,0,0,.08)}
+.sitenav ul.open{display:flex}
+.sitenav ul a{padding:12px 14px;border-radius:10px;font-size:1rem}
+}
+.site-foot{border-top:1px solid var(--line,#e4e7eb);margin-top:40px;padding:22px 16px 40px;text-align:center;font-size:.85rem;color:var(--muted,#7b8794);font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;line-height:1.6}
+.site-foot a{color:var(--muted,#7b8794);margin:0 10px;text-decoration:underline}
+.site-foot a:hover{color:var(--accent,#f1641e)}
+.site-foot p{margin:6px 0}
+.legal h2{margin-top:28px}
+.legal p,.legal li{line-height:1.7}
+</style>
+</head>
+<body>
+<nav class="sitenav" aria-label="Main menu"><div class="sn-in"><a class="sn-brand" href="index.html">Etsy <span>Calculators</span></a><button class="sn-btn" id="snBtn" aria-label="Open menu" aria-expanded="false" aria-controls="snList"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button><ul id="snList"><li><a href="index.html">UK Fees</a></li><li><a href="us-fees-calculator.html">US Fees</a></li><li><a href="canada-fees-calculator.html">Canada Fees</a></li><li><a href="australia-fees-calculator.html">Australia Fees</a></li><li><a href="offsite-ads-calculator.html">Offsite Ads</a></li><li><a href="digital-downloads-calculator.html">Digital Downloads</a></li></ul></div></nav>
+<div class="wrap legal">
+<h1>About</h1>
+<p class="sub">Free, simple calculators for Etsy sellers.</p>
+<p>Etsy fees are easy to lose track of: listing, transaction, payment processing, regulatory fees, VAT or GST on fees, and Offsite Ads. Together they can take a bigger share of a sale than most sellers expect. These calculators show where the money goes, so you can price your items with your real profit in mind.</p>
+
+<h2>What you will find here</h2>
+<ul>
+<li><a href="index.html">Etsy fees calculator for the UK</a></li>
+<li><a href="us-fees-calculator.html">Etsy fees calculator for the US</a></li>
+<li><a href="canada-fees-calculator.html">Etsy fees calculator for Canada</a></li>
+<li><a href="australia-fees-calculator.html">Etsy fees calculator for Australia</a></li>
+<li><a href="offsite-ads-calculator.html">Etsy Offsite Ads fee calculator</a></li>
+<li><a href="digital-downloads-calculator.html">Etsy digital downloads profit calculator</a></li>
+</ul>
+
+<h2>How the numbers are worked out</h2>
+<p>Each calculator uses the fee rates Etsy publishes for sellers in that country. Every rate can be edited in the fee settings, so you can correct it if Etsy changes its pricing or your shop is on different terms. Results are estimates for planning, not accounting or tax advice. Always check Etsy's official fees page for current rates.</p>
+
+<h2>Independent and free</h2>
+<p>This site is not affiliated with, endorsed by, or sponsored by Etsy. Etsy is a trademark of Etsy, Inc. The calculators are free to use and nothing you enter is stored.</p>
+
+<h2>Spotted a mistake?</h2>
+<p>If a fee looks out of date or a result seems wrong, please tell us at <a href="mailto:etsycalculators.help@gmail.com">etsycalculators.help@gmail.com</a>. We will check it and fix it.</p>
+
+</div>
+<footer class="site-foot"><div><a href="about.html">About</a><a href="privacy-policy.html">Privacy Policy</a><a href="contact.html">Contact</a></div><p>Not affiliated with Etsy. Figures are estimates for planning purposes only.</p></footer>
+<script>
+(function(){var b=document.getElementById("snBtn"),l=document.getElementById("snList");if(!b||!l)return;
+b.addEventListener("click",function(){var o=l.classList.toggle("open");b.setAttribute("aria-expanded",o)});
+document.addEventListener("click",function(e){if(!e.target.closest(".sitenav")){l.classList.remove("open");b.setAttribute("aria-expanded","false")}});})();
+</script>
+</body>
+</html>

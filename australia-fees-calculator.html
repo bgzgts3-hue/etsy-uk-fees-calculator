@@ -50,6 +50,12 @@ summary{cursor:pointer;font-weight:600}
 .sitenav ul.open{display:flex}
 .sitenav ul a{padding:12px 14px;border-radius:10px;font-size:1rem}
 }
+.site-foot{border-top:1px solid var(--line,#e4e7eb);margin-top:40px;padding:22px 16px 40px;text-align:center;font-size:.85rem;color:var(--muted,#7b8794);font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;line-height:1.6}
+.site-foot a{color:var(--muted,#7b8794);margin:0 10px;text-decoration:underline}
+.site-foot a:hover{color:var(--accent,#f1641e)}
+.site-foot p{margin:6px 0}
+.legal h2{margin-top:28px}
+.legal p,.legal li{line-height:1.7}
 </style>
 </head>
 <body>
@@ -159,6 +165,7 @@ function calc(){
 document.querySelectorAll('input').forEach(i=>i.addEventListener('input',calc));
 calc();
 </script>
+<footer class="site-foot"><div><a href="about.html">About</a><a href="privacy-policy.html">Privacy Policy</a><a href="contact.html">Contact</a></div><p>Not affiliated with Etsy. Figures are estimates for planning purposes only.</p></footer>
 <script>
 (function(){var b=document.getElementById("snBtn"),l=document.getElementById("snList");if(!b||!l)return;
 b.addEventListener("click",function(){var o=l.classList.toggle("open");b.setAttribute("aria-expanded",o)});
