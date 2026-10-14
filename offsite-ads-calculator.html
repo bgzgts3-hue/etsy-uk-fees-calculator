@@ -32,34 +32,11 @@ td:not(:first-child),th:not(:first-child){text-align:right}
 details{border-bottom:1px solid var(--line);padding:10px 0}
 summary{cursor:pointer;font-weight:600}
 .ad{min-height:90px;margin:20px 0;text-align:center;color:var(--muted);font-size:.8rem}
-
-.sitenav{position:sticky;top:0;z-index:50;background:var(--card,#fff);border-bottom:1px solid var(--line,#e4e7eb);font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;line-height:1.4}
-.sitenav .sn-in{max-width:1100px;margin:0 auto;padding:0 16px;min-height:56px;display:flex;align-items:center;justify-content:space-between}
-.sitenav .sn-brand{font-weight:700;font-size:1rem;color:var(--text,#222);text-decoration:none}
-.sitenav .sn-brand span{color:var(--accent,#f1641e)}
-.sitenav ul{list-style:none;margin:0;padding:0;display:flex;gap:4px}
-.sitenav ul a{display:block;padding:8px 14px;border-radius:999px;color:var(--text,#222);text-decoration:none;font-size:.92rem;font-weight:500;margin:0}
-.sitenav ul a:hover{background:rgba(127,127,127,.14)}
-.sitenav ul a.active{background:var(--accent,#f1641e);color:#fff}
-.sitenav .sn-btn{display:none;align-items:center;justify-content:center;width:44px;height:44px;background:none;border:1px solid var(--line,#e4e7eb);border-radius:10px;color:var(--text,#222);cursor:pointer}
-.sitenav .sn-btn svg{width:22px;height:22px}
-@media(max-width:1040px){
-.sitenav .sn-btn{display:flex}
-.sitenav ul{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;gap:2px;padding:8px 12px 12px;background:var(--card,#fff);border-bottom:1px solid var(--line,#e4e7eb);box-shadow:0 8px 16px rgba(0,0,0,.08)}
-.sitenav ul.open{display:flex}
-.sitenav ul a{padding:12px 14px;border-radius:10px;font-size:1rem}
-}
-.site-foot{border-top:1px solid var(--line,#e4e7eb);margin-top:40px;padding:22px 16px 40px;text-align:center;font-size:.85rem;color:var(--muted,#7b8794);font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;line-height:1.6}
-.site-foot a{color:var(--muted,#7b8794);margin:0 10px;text-decoration:underline}
-.site-foot a:hover{color:var(--accent,#f1641e)}
-.site-foot p{margin:6px 0}
-.legal h2{margin-top:28px}
-.legal p,.legal li{line-height:1.7}
 </style>
 </head>
 <body>
-<nav class="sitenav" aria-label="Main menu"><div class="sn-in"><a class="sn-brand" href="index.html">Etsy <span>Calculators</span></a><button class="sn-btn" id="snBtn" aria-label="Open menu" aria-expanded="false" aria-controls="snList"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button><ul id="snList"><li><a href="index.html">UK Fees</a></li><li><a href="us-fees-calculator.html">US Fees</a></li><li><a href="canada-fees-calculator.html">Canada Fees</a></li><li><a href="australia-fees-calculator.html">Australia Fees</a></li><li><a href="germany-fees-calculator.html">Germany Fees</a></li><li><a href="offsite-ads-calculator.html" class="active" aria-current="page">Offsite Ads</a></li><li><a href="digital-downloads-calculator.html">Digital Downloads</a></li></ul></div></nav>
 <div class="wrap">
+<p class="nav"><a href="index.html">&larr; Etsy Fees Calculator UK</a></p>
 <h1>Etsy Offsite Ads Fee Calculator (UK)</h1>
 <p class="sub">See what an Offsite Ads sale really leaves you with, and how much to raise your price to stay profitable.</p>
 
@@ -99,7 +76,6 @@ summary{cursor:pointer;font-weight:600}
 <details><summary>Is the Offsite Ads fee charged on shipping?</summary><p>Yes, it is calculated on the full order total including shipping.</p></details>
 <details><summary>Is there a maximum Offsite Ads fee?</summary><p>Yes, Etsy caps the fee per item at around $100.</p></details>
 <p class="nav"><a href="index.html">Try the full Etsy Fees Calculator for UK sellers &rarr;</a></p>
-<p class="nav"><a href="digital-downloads-calculator.html">Selling digital downloads? Try the Digital Downloads Profit Calculator &rarr;</a></p>
 </div>
 
 <script>
@@ -134,12 +110,6 @@ function calc(){
 }
 document.querySelectorAll('input').forEach(i=>i.addEventListener('input',calc));
 calc();
-</script>
-<footer class="site-foot"><div><a href="about.html">About</a><a href="privacy-policy.html">Privacy Policy</a><a href="contact.html">Contact</a></div><p>Not affiliated with Etsy. Figures are estimates for planning purposes only.</p></footer>
-<script>
-(function(){var b=document.getElementById("snBtn"),l=document.getElementById("snList");if(!b||!l)return;
-b.addEventListener("click",function(){var o=l.classList.toggle("open");b.setAttribute("aria-expanded",o)});
-document.addEventListener("click",function(e){if(!e.target.closest(".sitenav")){l.classList.remove("open");b.setAttribute("aria-expanded","false")}});})();
 </script>
 </body>
 </html>
