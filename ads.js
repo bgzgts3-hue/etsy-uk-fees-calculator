@@ -13,10 +13,14 @@
  */
 (function () {
   var ADS = {
-    enabled: false,
+    enabled: true,
     slots: {
-      mid:    { width: 300, height: 250, html: ``, mobile: { width: 300, height: 250, html: `` } },
-      bottom: { width: 728, height: 90,  html: ``, mobile: { width: 320, height: 50,  html: `` } }
+      // under the results box: 300x250 on desktop and phone
+      mid:    { width: 300, height: 250, html: `<script>atOptions={'key':'4b99b9e8dc9215b95bf89d752a9efabc','format':'iframe','height':250,'width':300,'params':{}};</script><script src="https://roomsmergeshipwreck.com/4b99b9e8dc9215b95bf89d752a9efabc/invoke.js"></script>`,
+                mobile: { width: 300, height: 250, html: `<script>atOptions={'key':'4b99b9e8dc9215b95bf89d752a9efabc','format':'iframe','height':250,'width':300,'params':{}};</script><script src="https://roomsmergeshipwreck.com/4b99b9e8dc9215b95bf89d752a9efabc/invoke.js"></script>` } },
+      // above the footer: 728x90 on desktop, 320x50 on phone
+      bottom: { width: 728, height: 90,  html: `<script>atOptions={'key':'4b876fb86bc62d6b41c5a4f985010f3d','format':'iframe','height':90,'width':728,'params':{}};</script><script src="https://roomsmergeshipwreck.com/4b876fb86bc62d6b41c5a4f985010f3d/invoke.js"></script>`,
+                mobile: { width: 320, height: 50,  html: `<script>atOptions={'key':'5f39d6ad57a0bcb85aaf48ada566368d','format':'iframe','height':50,'width':320,'params':{}};</script><script src="https://roomsmergeshipwreck.com/5f39d6ad57a0bcb85aaf48ada566368d/invoke.js"></script>` } }
     }
   };
 
