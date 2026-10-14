@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Etsy Fees Calculator Netherlands (2026) – Profit, Fees &amp; Net Payout</title>
+<meta name="description" content="Free Etsy fees calculator for sellers in the Netherlands. Work out listing, transaction, payment processing, VAT and offsite ads fees in euros, plus your real profit and margin.">
+<link rel="canonical" href="https://bgzgts3-hue.github.io/etsy-uk-fees-calculator/netherlands-fees-calculator.html">
+<style>
+:root{--bg:#f7f5f2;--card:#fff;--text:#222;--muted:#666;--accent:#f1641e;--line:#e5e0d9}
+@media(prefers-color-scheme:dark){:root{--bg:#161616;--card:#222;--text:#eee;--muted:#aaa;--line:#383838}}
+*{box-sizing:border-box}
+body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+.wrap{max-width:760px;margin:0 auto;padding:20px 16px 60px}
+h1{font-size:1.7rem;line-height:1.25;margin:10px 0}
+h2{font-size:1.25rem;margin-top:32px}
+.sub{color:var(--muted);margin-top:0}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px;margin:16px 0}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:520px){.grid{grid-template-columns:1fr}}
+label{display:block;font-size:.85rem;color:var(--muted);margin-bottom:4px}
+input[type=number]{width:100%;padding:10px;font-size:1rem;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--text)}
+.chk{display:flex;gap:8px;align-items:center;margin:10px 0;font-size:.95rem}
+.chk label{margin:0;color:var(--text)}
+.res{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:6px}
+.box{border:1px solid var(--line);border-radius:10px;padding:12px;text-align:center}
+.box b{display:block;font-size:1.4rem}
+.box.main{background:var(--accent);color:#fff;border:0}
+table{width:100%;border-collapse:collapse;font-size:.95rem}
+td,th{padding:8px 4px;border-bottom:1px solid var(--line);text-align:left}
+td:last-child,th:last-child{text-align:right}
+.note{font-size:.8rem;color:var(--muted)}
+details{border-bottom:1px solid var(--line);padding:10px 0}
+summary{cursor:pointer;font-weight:600}
+.ad{min-height:90px;margin:20px 0;text-align:center;color:var(--muted);font-size:.8rem}
+
+.sitenav{position:sticky;top:0;z-index:50;background:var(--card,#fff);border-bottom:1px solid var(--line,#e4e7eb);font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;line-height:1.4}
+.sitenav .sn-in{max-width:1100px;margin:0 auto;padding:0 16px;min-height:56px;display:flex;align-items:center;justify-content:space-between}
+.sitenav .sn-brand{font-weight:700;font-size:1rem;color:var(--text,#222);text-decoration:none}
+.sitenav .sn-brand span{color:var(--accent,#f1641e)}
+.sitenav ul{list-style:none;margin:0;padding:0;display:flex;gap:4px;align-items:center}
+.sitenav ul a{display:block;padding:8px 14px;border-radius:999px;color:var(--text,#222);text-decoration:none;font-size:.92rem;font-weight:500;margin:0}
+.sitenav ul a:hover{background:rgba(127,127,127,.14)}
+.sitenav ul a.active{background:var(--accent,#f1641e);color:#fff}
+.sitenav .has-sub{position:relative}
+.sitenav .sub-btn{font:inherit;font-size:.92rem;font-weight:500;display:flex;align-items:center;gap:6px;padding:8px 14px;border-radius:999px;background:none;border:0;color:var(--text,#222);cursor:pointer}
+.sitenav .sub-btn:hover{background:rgba(127,127,127,.14)}
+.sitenav .sub-btn.active{background:var(--accent,#f1641e);color:#fff}
+.sitenav .sub-btn svg{width:14px;height:14px;transition:transform .15s}
+.sitenav .has-sub.open .sub-btn svg{transform:rotate(180deg)}
+.sitenav ul.sub-list{display:none;position:absolute;top:calc(100% + 6px);left:0;min-width:220px;flex-direction:column;align-items:stretch;gap:0;padding:6px;background:var(--card,#fff);border:1px solid var(--line,#e4e7eb);border-radius:12px;box-shadow:0 10px 24px rgba(0,0,0,.12)}
+.sitenav .has-sub.open ul.sub-list{display:flex}
+.sitenav ul.sub-list a{border-radius:8px;padding:9px 12px}
+.sitenav ul.sub-list a.active{background:rgba(241,100,30,.14);color:var(--accent,#f1641e);font-weight:700}
+.sitenav .sn-btn{display:none;align-items:center;justify-content:center;width:44px;height:44px;background:none;border:1px solid var(--line,#e4e7eb);border-radius:10px;color:var(--text,#222);cursor:pointer}
+.sitenav .sn-btn svg{width:22px;height:22px}
+@media(max-width:760px){
+.sitenav .sn-btn{display:flex}
+.sitenav ul{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:stretch;gap:2px;padding:8px 12px 12px;background:var(--card,#fff);border-bottom:1px solid var(--line,#e4e7eb);box-shadow:0 8px 16px rgba(0,0,0,.08);max-height:calc(100vh - 60px);overflow:auto}
+.sitenav ul.open{display:flex}
+.sitenav ul a{padding:12px 14px;border-radius:10px;font-size:1rem}
+.sitenav .sub-btn{width:100%;justify-content:space-between;padding:12px 14px;border-radius:10px;font-size:1rem}
+.sitenav ul.sub-list{position:static;min-width:0;box-shadow:none;border:0;padding:0 0 4px 12px;background:none}
+}
+.ad-slot{margin:22px auto;text-align:center;max-width:100%;overflow:hidden}
+.ad-slot:empty{display:none;margin:0}
+.ad-slot iframe{border:0;max-width:100%}
+.more-list{columns:2;column-gap:28px;padding-left:18px}
+.more-list li{margin:4px 0;break-inside:avoid}
+@media(max-width:520px){.more-list{columns:1}}
+.site-foot{border-top:1px solid var(--line,#e4e7eb);margin-top:40px;padding:22px 16px 40px;text-align:center;font-size:.85rem;color:var(--muted,#7b8794);font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;line-height:1.6}
+.site-foot a{color:var(--muted,#7b8794);margin:0 10px;text-decoration:underline}
+.site-foot a:hover{color:var(--accent,#f1641e)}
+.site-foot p{margin:6px 0}
+.legal h2{margin-top:28px}
+.legal p,.legal li{line-height:1.7}
+</style>
+</head>
+<body>
+<nav class="sitenav" aria-label="Main menu"><div class="sn-in"><a class="sn-brand" href="index.html">Etsy <span>Calculators</span></a><button class="sn-btn" id="snBtn" aria-label="Open menu" aria-expanded="false" aria-controls="snList"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button><ul id="snList"><li class="has-sub"><button class="sub-btn active" type="button" aria-expanded="false" aria-haspopup="true">Fees by country <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button><ul class="sub-list"><li><a href="index.html">United Kingdom</a></li><li><a href="us-fees-calculator.html">United States</a></li><li><a href="canada-fees-calculator.html">Canada</a></li><li><a href="australia-fees-calculator.html">Australia</a></li><li><a href="new-zealand-fees-calculator.html">New Zealand</a></li><li><a href="germany-fees-calculator.html">Germany</a></li><li><a href="france-fees-calculator.html">France</a></li><li><a href="italy-fees-calculator.html">Italy</a></li><li><a href="spain-fees-calculator.html">Spain</a></li><li><a href="netherlands-fees-calculator.html" class="active" aria-current="page">Netherlands</a></li><li><a href="ireland-fees-calculator.html">Ireland</a></li></ul></li><li><a href="offsite-ads-calculator.html">Offsite Ads</a></li><li><a href="digital-downloads-calculator.html">Digital Downloads</a></li><li><a href="calculators.html">All calculators</a></li></ul></div></nav>
+<div class="wrap">
+<h1>Etsy Fees Calculator for Sellers in the Netherlands (2026)</h1>
+<p class="sub">Enter your price and costs to see every Etsy fee, your net payout, profit and margin in euros.</p>
+
+<div class="card">
+<div class="grid">
+<div><label for="price">Item price (€)</label><input type="number" id="price" value="25" min="0" step="0.01"></div>
+<div><label for="ship">Shipping charged to buyer (€)</label><input type="number" id="ship" value="5" min="0" step="0.01"></div>
+<div><label for="cost">Your item cost (€)</label><input type="number" id="cost" value="8" min="0" step="0.01"></div>
+<div><label for="shipcost">Your shipping/postage cost (€)</label><input type="number" id="shipcost" value="4.5" min="0" step="0.01"></div>
+</div>
+<div class="chk"><input type="checkbox" id="ads"><label for="ads">Sale came from Offsite Ads</label></div>
+<div class="chk"><input type="checkbox" id="small" checked><label for="small">Shop earned under $10,000 in last 365 days (15% ads fee, else 12%)</label></div>
+<div class="chk"><input type="checkbox" id="tax" checked><label for="tax">Add 21% VAT on Etsy fees (untick if you are VAT registered and can reclaim it)</label></div>
+<details><summary>Fee settings (edit if Etsy changes them)</summary>
+<div class="grid" style="margin-top:12px">
+<div><label for="list">Listing fee (€)</label><input type="number" id="list" value="0.17" step="0.01"></div>
+<div><label for="tx">Transaction fee (%)</label><input type="number" id="tx" value="6.5" step="0.01"></div>
+<div><label for="pp">Payment processing (%)</label><input type="number" id="pp" value="4" step="0.01"></div>
+<div><label for="ppf">Processing fixed fee (€)</label><input type="number" id="ppf" value="0.30" step="0.01"></div>
+<div><label for="reg">Regulatory operating fee (%)</label><input type="number" id="reg" value="0" step="0.01"></div>
+<div><label for="cap">Offsite Ads fee cap (€)</label><input type="number" id="cap" value="90" step="1"></div>
+</div>
+<p class="note">The listing fee is billed as US$0.20, so the € amount moves with the exchange rate. The ads cap is about US$100 per order. If your Etsy payment account shows a regulatory operating fee, enter its rate here.</p>
+</details>
+</div>
+
+<div class="card">
+<div class="res">
+<div class="box main"><span>Your profit</span><b id="profit">€0</b></div>
+<div class="box"><span>Profit margin</span><b id="margin">0%</b></div>
+<div class="box"><span>Total Etsy fees</span><b id="tfees">€0</b></div>
+<div class="box"><span>Net payout</span><b id="net">€0</b></div>
+</div>
+<table style="margin-top:14px">
+<tr><th>Fee</th><th>Amount</th></tr>
+<tr><td>Listing fee</td><td id="f_list"></td></tr>
+<tr><td>Transaction fee</td><td id="f_tx"></td></tr>
+<tr><td>Payment processing</td><td id="f_pay"></td></tr>
+<tr><td>Regulatory operating fee</td><td id="f_reg"></td></tr>
+<tr><td>Offsite Ads fee</td><td id="f_ads"></td></tr>
+<tr><td>VAT on fees (21%)</td><td id="f_tax"></td></tr>
+</table>
+<p class="note">Estimate only. Rates change and differ by shop, so always check Etsy's official fees page.</p>
+</div>
+
+<div class="ad-slot" data-slot="mid"></div>
+
+<div class="card">
+<h2 style="margin-top:0">Need a selling price for a target profit?</h2>
+<div class="grid">
+<div><label for="tm">Target profit margin (%)</label><input type="number" id="tm" value="30" min="1" max="90"></div>
+<div class="box"><span>Suggested item price</span><b id="sug">€0</b></div>
+</div>
+<p class="note">Uses your item cost, postage and shipping charged above. Offsite Ads are not included.</p>
+</div>
+
+<h2>How Etsy fees work in the Netherlands</h2>
+<p>Every sale on Etsy includes a listing fee of US$0.20 (shown in euros), a 6.5% transaction fee on the item price plus shipping, and payment processing of 4% + €0.30 per order. Etsy does not currently list a regulatory operating fee for sellers in the Netherlands, so it is set to 0%. Etsy adds 21% VAT (BTW) on top of its fees unless you are VAT registered and the reverse charge applies. Offsite Ads add another 12-15% only when a sale comes through those ads.</p>
+<p>Example: you sell a €25 item and charge €5 shipping, so the order total is €30.00. Etsy fees come to about €4.38 (14.6% of the order), leaving a net payout of €25.62. After your item cost (€8.00) and postage (€4.50), your profit is about €13.12, a margin of 43.7%. Change the numbers above to see your own result.</p>
+<p><b>Tip:</b> Transaction and processing fees apply to shipping too, so charging €6 shipping on a €25 item means Etsy also takes a cut of that €6.</p>
+
+<h2>More Etsy fee calculators</h2>
+<ul class="more-list"><li><a href="index.html">Etsy Fees Calculator – United Kingdom</a></li><li><a href="us-fees-calculator.html">Etsy Fees Calculator – United States</a></li><li><a href="canada-fees-calculator.html">Etsy Fees Calculator – Canada</a></li><li><a href="australia-fees-calculator.html">Etsy Fees Calculator – Australia</a></li><li><a href="new-zealand-fees-calculator.html">Etsy Fees Calculator – New Zealand</a></li><li><a href="germany-fees-calculator.html">Etsy Fees Calculator – Germany</a></li><li><a href="france-fees-calculator.html">Etsy Fees Calculator – France</a></li><li><a href="italy-fees-calculator.html">Etsy Fees Calculator – Italy</a></li><li><a href="spain-fees-calculator.html">Etsy Fees Calculator – Spain</a></li><li><a href="ireland-fees-calculator.html">Etsy Fees Calculator – Ireland</a></li><li><a href="offsite-ads-calculator.html">Etsy Offsite Ads Fee Calculator</a></li><li><a href="digital-downloads-calculator.html">Etsy Digital Downloads Profit Calculator</a></li></ul>
+
+<h2>FAQ</h2>
+<details><summary>How much does Etsy take from a €25 sale in the Netherlands?</summary><p>On a €25 item with €5 shipping, Etsy's fees come to about 15% of the order at the default settings, and more if the sale comes from Offsite Ads. Use the calculator above for your exact numbers.</p></details>
+<details><summary>Does Etsy charge fees on shipping?</summary><p>Yes. The transaction fee and payment processing fee are calculated on the full order total, including shipping.</p></details>
+<details><summary>Can I avoid Offsite Ads fees?</summary><p>Shops under $10,000 in annual sales can opt out. Larger shops cannot, and pay a reduced 12% rate.</p></details>
+</div>
+
+<script>
+const $=id=>document.getElementById(id);
+const g=id=>parseFloat($(id).value)||0;
+const f=n=>(n<0?"-":"")+"€"+Math.abs(n).toFixed(2);
+function calc(){
+  const price=g('price'),ship=g('ship'),cost=g('cost'),sc=g('shipcost');
+  const total=price+ship;
+  const pp=g('pp');
+  const list=g('list');
+  const tx=total*g('tx')/100;
+  const pay=total*pp/100+g('ppf');
+  const reg=total*g('reg')/100;
+  const ads=$('ads').checked?Math.min(total*($('small').checked?0.15:0.12),g('cap')):0;
+  const sub=list+tx+pay+reg+ads;
+  const taxamt=$('tax').checked?sub*0.21:0;
+  const fees=sub+taxamt;
+  const net=total-fees;
+  const profit=net-cost-sc;
+  $('f_list').textContent=f(list);$('f_tx').textContent=f(tx);$('f_pay').textContent=f(pay);
+  $('f_reg').textContent=f(reg);
+  $('f_ads').textContent=f(ads);
+  $('f_tax').textContent=f(taxamt);
+  $('tfees').textContent=f(fees);$('net').textContent=f(net);$('profit').textContent=f(profit);
+  $('margin').textContent=(total>0?(profit/total*100):0).toFixed(1)+"%";
+  const m=g('tm')/100;
+  const v=$('tax').checked?1.21:1;
+  const rate=(g('tx')+pp+g('reg'))/100*v;
+  const fixed=(g('list')+g('ppf'))*v;
+  const denom=1-rate-m;
+  if(denom>0){$('sug').textContent=f(Math.max(0,(cost+sc+fixed)/denom-ship));}
+  else $('sug').textContent="N/A";
+}
+document.querySelectorAll('input').forEach(i=>i.addEventListener('input',calc));
+calc();
+</script>
+<div class="wrap"><div class="ad-slot" data-slot="bottom"></div></div>
+<footer class="site-foot"><div><a href="about.html">About</a><a href="privacy-policy.html">Privacy Policy</a><a href="contact.html">Contact</a><a href="calculators.html">All calculators</a></div><p>Not affiliated with Etsy. Figures are estimates for planning purposes only.</p></footer>
+<script>
+(function(){var b=document.getElementById("snBtn"),l=document.getElementById("snList");if(!b||!l)return;
+var s=l.querySelector(".has-sub"),sb=l.querySelector(".sub-btn");
+function closeSub(){if(s){s.classList.remove("open");sb.setAttribute("aria-expanded","false")}}
+function closeAll(){l.classList.remove("open");b.setAttribute("aria-expanded","false");closeSub()}
+b.addEventListener("click",function(){var o=l.classList.toggle("open");b.setAttribute("aria-expanded",o)});
+if(sb)sb.addEventListener("click",function(e){e.stopPropagation();var o=s.classList.toggle("open");sb.setAttribute("aria-expanded",o)});
+document.addEventListener("click",function(e){if(!e.target.closest(".sitenav"))closeAll();else if(!e.target.closest(".has-sub"))closeSub()});
+document.addEventListener("keydown",function(e){if(e.key==="Escape")closeAll()});})();
+</script>
+<script src="ads.js" defer></script>
+</body>
+</html>
